@@ -1,0 +1,47 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1.5rem 0;
+    background-color: #323131;
+    color: #fff;
+    font-weight: 600;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    width: 10rem;
+}
+
+.appContent {
+    width: auto;
+}
+
+.navlink {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: center;
+}
+
+.navlink > a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+}
+
+
+.appContainer {
+    display: flex;
+    min-height: 100vh;
+    background-color: #5a2ca3;
+}
+
+
+.reactLogo {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
