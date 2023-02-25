@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import MediumClap from "../Components/Clap";
+import ShowcaseContainer from "../Containers/ShowcaseContainer";
 
 const BasePage = () => {
-    return (
-        <div>
-            <h1>Base page</h1>
-        </div>
-    );
+  return (
+    <ShowcaseContainer>
+      <h1>Base page</h1>
+      <MediumClap />
+    </ShowcaseContainer>
+  );
 };
 
 export default BasePage;

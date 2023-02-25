@@ -9,7 +9,6 @@ const Router = () => {
   return (
     <BrowserRouter>
       <div className={styles.appContainer}>
-
         <ul className={styles.navigation}>
           <li>
             <NavLink to="/" className={styles.navlink}>
