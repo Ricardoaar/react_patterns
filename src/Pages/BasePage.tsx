@@ -1,13 +1,16 @@
 import React from "react";
 import MediumClap from "../Components/Clap";
 import ShowcaseContainer from "../Containers/ShowcaseContainer";
+import ClapPageTemplate from "../Components/ClapBodyTemplate/ClapPageTemplate";
 
 const BasePage = () => {
   return (
-    <ShowcaseContainer>
-      <h1>Base page</h1>
+    <ClapPageTemplate
+      title={"Base page"}
+      description={"This is the base page, all the patterns are based on this page"}
+    >
       <MediumClap />
-    </ShowcaseContainer>
+    </ClapPageTemplate>
   );
 };
 
