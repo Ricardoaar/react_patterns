@@ -1,15 +1,34 @@
-import React from "react";
+import React, { useCallback } from "react";
 import styles from "./clap.module.css";
 
-const MediumClap = () => {
-  return (
-    <button className={styles.button}>
-      <ClapIcon></ClapIcon>
-      <ClapCount></ClapCount>
-      <ClapTotal></ClapTotal>
-    </button>
-  );
+const initialClapState = {
+  count: 0,
+  countTotal: Math.ceil(Math.random() * 1000)
 };
+
+const MediumClap = () => {
+    const [clapState, setClapState] = React.useState(initialClapState);
+    const { count, countTotal } = clapState;
+    const handleClapClick = useCallback(() => {
+      setClapState(({ count, countTotal }) => ({
+        count: count + 1,
+        countTotal: countTotal + 1
+      }));
+    }, []);
+
+    return (
+      <div className={styles.buttonContainer}>
+        <ClapCount value={count}></ClapCount>
+        <button className={styles.button} onClick={handleClapClick}>
+          <ClapIcon />
+        </button>
+        <ClapTotal value={countTotal}></ClapTotal>
+      </div>
+
+
+    );
+  }
+;
 
 
 const ClapIcon = ({ isClicked = false }) => {
@@ -26,12 +45,12 @@ const ClapIcon = ({ isClicked = false }) => {
   </svg>;
 };
 
-const ClapCount = () => {
-  return <span>0</span>;
+const ClapCount = ({ value }: { value: number }) => {
+  return <span className={styles.count}>{value}</span>;
 };
 
-const ClapTotal = () => {
-  return <span>0</span>;
+const ClapTotal = ({ value }: { value: number }) => {
+  return <span>Total {value}</span>;
 };
 
 
